@@ -17,7 +17,7 @@ import com.example.examenesgynny.services.ArtworkService;
 
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/artwork")
 public class ArtworkRestControllers {
 	
 	@Autowired
