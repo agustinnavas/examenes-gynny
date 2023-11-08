@@ -1,13 +1,13 @@
 package com.example.examenesgynny.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.example.examenesgynny.validations.ArtworkCodeValidators;
 
 public class ArtworkDTO {
 	
 	//atributos
 	private Integer id;
 	private String titulo;
+	@ArtworkCodeValidators
 	private String descripcion;
 	private Integer artistld;
 	
