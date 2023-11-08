@@ -2,9 +2,12 @@ package com.example.examenesgynny.services;
 
 import java.util.ArrayList;
 
-import com.example.examenesgynny.exceptions.createArtwork;
+import com.example.examenesgynny.exceptions.CreateArtwork;
 import com.example.examenesgynny.model.ArtworkDTO;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ArtworkServiceImpl implements ArtworkService {
 	
 	ArrayList<ArtworkDTO> obras = new ArrayList<>();
@@ -29,9 +32,30 @@ public class ArtworkServiceImpl implements ArtworkService {
 
 	@Override
 	public void createArtwork(ArtworkDTO artworkDTO) {
-		obras.add(artworkDTO);
-		
-		throw new createArtwork("el arte no se encuentra la obra de arte " );
-	}			
+	    // Obtenemos el título y la descripción de la obra de arte desde el objeto ArtworkDTO
+	    String title = artworkDTO.getTitulo();
+	    String description = artworkDTO.getDescripcion();
+
+	    // Verificamos si tanto el título como la descripción son válidos
+	    if (isInputValid(title) && isInputValid(description)) {
+	        // Si ambos son válidos, agregamos la obra de arte a la lista de obras
+	        obras.add(artworkDTO);
+	    } else {
+	        // Si alguno de los campos no es válido, lanzamos una excepción con un mensaje de error
+	        throw new CreateArtwork("El arte no se ha creado: el título y la descripción deben contener al menos 5 palabras.");
+	    }
+	}
+
+	// Función para validar una cadena de texto
+	private boolean isInputValid(String input) {
+	    // Verificamos si la cadena es nula o está vacía
+	    if (input == null || input.trim().isEmpty()) {
+	        return false;
+	    }
+
+	    // Dividimos la cadena en palabras y verificamos si hay al menos 5 palabras
+	    String[] words = input.trim().split("\\s+");
+	    return words.length >= 5;
+	}
 
 }

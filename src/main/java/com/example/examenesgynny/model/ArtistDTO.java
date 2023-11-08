@@ -31,7 +31,6 @@ public class ArtistDTO {
 		this.name = name;
 	}
 
-	//to string
 	@Override
 	public String toString() {
 		return "ArtistDTO [id=" + id + ", name=" + name + "]";
