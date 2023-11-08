@@ -4,6 +4,6 @@ import com.example.examenesgynny.model.ArtistDTO;
 
 public interface ArtistService {
 	
-	ArtistDTO getArtistById(Integer id);
+	ArtistDTO getArtistById(ArtistDTO book);
 
 }

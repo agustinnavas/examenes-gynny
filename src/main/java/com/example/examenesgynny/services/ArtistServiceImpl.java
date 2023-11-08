@@ -40,6 +40,13 @@ public class ArtistServiceImpl implements ArtistService{
 	    return null;
 	}
 
+
+	@Override
+	public ArtistDTO getArtistById(ArtistDTO book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 

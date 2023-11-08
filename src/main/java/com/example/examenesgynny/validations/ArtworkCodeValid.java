@@ -18,9 +18,6 @@ public class ArtworkCodeValid implements ConstraintValidator<ArtworkCodeValidato
 
    String[] palabras = value.trim().split("\\s+");
    return palabras.length >= 5;
-
-
-		
 		
 	}
 
