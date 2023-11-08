@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.examenesgynny.exceptions.ArtistNotFoundException;
-import com.example.examenesgynny.exceptions.CreateArtwork;
+import com.example.examenesgynny.exceptions.CreateArtworkExceptions;
 
 
 
@@ -29,8 +29,8 @@ public class GlobalExceptionHandler {
 		return problemDetail;
 	}
 	
-	@ExceptionHandler( CreateArtwork.class )
-	public ProblemDetail handleReservationConflictException(CreateArtwork e) {
+	@ExceptionHandler( CreateArtworkExceptions.class )
+	public ProblemDetail handleReservationConflictException(CreateArtworkExceptions e) {
 
 		ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
 		problemDetail.setTitle("arte Exception Occurred");

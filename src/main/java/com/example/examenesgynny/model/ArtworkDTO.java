@@ -1,5 +1,8 @@
 package com.example.examenesgynny.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class ArtworkDTO {
 	
 	//atributos
